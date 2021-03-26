@@ -20,5 +20,9 @@
   "bugs": {
     "url": "https://github.com/Spody10/friends-fur-ever/issues"
   },
-  "homepage": "https://github.com/Spody10/friends-fur-ever#readme"
+  "homepage": "https://github.com/Spody10/friends-fur-ever#readme",
+  "dependencies": {
+    "concurrently": "^6.0.0",
+    "mongodb": "^3.6.5"
+  }
 }
