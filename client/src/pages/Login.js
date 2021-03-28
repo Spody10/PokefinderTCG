@@ -1,6 +1,6 @@
 import React from "react";
 import background from "../assets/images/background.png";
-import profOak from "../assets/images/prof-oak.png";
+import ProfOak from "../components/ProfOak/ProfOak";
 import Disclaimer from "../components/Disclaimer/Disclaimer";
 import LoginForm from "../components/Login/LoginForm";
 //import Header from "../components/Header/index";
@@ -14,7 +14,7 @@ const Login = () => {
       </div>
       <div>
         <div>
-          <img src={profOak} alt="profOak" />
+          <ProfOak />
         </div>
         <div>
           <Disclaimer />
