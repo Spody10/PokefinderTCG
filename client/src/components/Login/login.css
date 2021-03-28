@@ -65,9 +65,8 @@ button {
   background: url(/client/src/assets/images/PngItem_1075267.png);
   background-position: center;
   background-repeat: no-repeat;
-  background-color: #000000;
+  background-color: #f3f3f3;
   font-size: 20px;
-  color: #ffffff;
   border-radius: 28px;
   padding: 16px 31px;
 }
@@ -85,24 +84,4 @@ button:focus {
   font-family: "Open Sans", sans-serif;
   font-size: 24px;
   justify-content: center;
-}
-.disclaimer {
-  align-items: center;
-  justify-content: center;
-  display: flex;
-  flex-direction: column;
-  position: absolute;
-  width: 516px;
-  height: 141px;
-  left: 831px;
-  top: 700px;
-  border: 5px solid #a3d2ed;
-  box-sizing: border-box;
-  border-radius: 42px;
-  background: #f2fcff;
-}
-.container {
-  background-size: auto;
-  background-repeat: no-repeat;
-  background-position: top left;
 }
