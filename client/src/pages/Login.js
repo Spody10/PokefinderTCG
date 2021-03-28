@@ -7,10 +7,6 @@ import LoginForm from "../components/Login/LoginForm";
 
 const Login = () => {
   return (
-<<<<<<< HEAD
-    <div>hello</div>
-    
-=======
     <div>
       <img src={background} style={{ width: "100%" }} alt="background" />
       <div>
@@ -25,7 +21,6 @@ const Login = () => {
         </div>
       </div>
     </div>
->>>>>>> Veronica
   );
 };
 
