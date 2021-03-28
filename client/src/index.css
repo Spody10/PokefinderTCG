@@ -8,9 +8,22 @@
     background-size: cover;
     background-position-y: center;
 }
+header {
+    background: linear-gradient(
+        0deg
+        , rgba(95,100,107,0) 0%,
+         rgba(95,100,107,0.25) 25%,
+          rgba(95,100,107,0.5) 50%,
+           rgba(95,100,107,0.75) 75%,
+            rgba(95,100,107,1) 100%);
+    height: 11vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
 .pokeball-container {
-    width: 20vw;
-    height: 20vw;
+    width: 5rem;
+    height: 5rem;
 }
 .pokeball-top {
     box-sizing: border-box;
