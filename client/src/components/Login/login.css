@@ -50,7 +50,7 @@
   width: fit-content;
 }
 input {
-  background-color: #f3f3f3;
+  background-color: #cac4c4;
   border: 0;
   border-radius: 4px;
   font-family: "RetroGaming";
@@ -77,9 +77,9 @@ button {
   background-image: url(/client/src/assets/images/PngItem_1075267.png);
   background-position: center;
   background-repeat: no-repeat;
-  background-color: #f3f3f3;
+  background-color: #cac4c4;
   font-size: 20px;
-  border-radius: 50%;
+  border-radius: 42px;
   padding: 10px;
 }
 
