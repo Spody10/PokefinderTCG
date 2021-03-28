@@ -1,4 +1,12 @@
-.disclaimer {
+@font-face {
+  font-family: "RetroGaming";
+  src: url("../../assets/font/retro_gaming/RetroGaming.woff") format("woff"),
+    /* Modern Browers*/ url("../../assets/font/retro_gaming/RetroGaming.woff2")
+      format("woff2"),
+    url("../../assets/font/retro_gaming/RetroGaming.ttf") format("truetype")
+      /* Safari, Android, iOs */;
+}
+.textbox {
   align-items: center;
   justify-content: center;
   display: flex;
@@ -6,10 +14,19 @@
   position: absolute;
   width: 516px;
   height: 141px;
-  left: 831px;
+  left: 1431px;
   top: 782px;
   border: 5px solid #a3d2ed;
   box-sizing: border-box;
   border-radius: 42px;
   background: #f2fcff;
+}
+.disclaimer {
+  font-size: 14px;
+  font-family: "RetroGaming";
+}
+@media screen and (max-width: 960px) {
+}
+
+@media screen and (max-width: 768px) {
 }
