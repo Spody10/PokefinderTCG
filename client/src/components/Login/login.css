@@ -74,10 +74,6 @@ input:focus {
 }
 
 button {
-  background-image: url(/client/src/assets/images/PngItem_1075267.png);
-  background-position: center;
-  background-repeat: no-repeat;
-  background-color: #cac4c4;
   font-size: 20px;
   border-radius: 42px;
   padding: 10px;
@@ -100,116 +96,14 @@ button:focus {
 
 @media screen and (max-width: 980px) {
   /* this will be applied on any screen smaller than 980px */
-  .header {
-    padding: 0;
-    justify-content: center;
-    position: relative;
-  }
-  header h1 {
-    width: 100%;
-    text-align: center;
-  }
-  header nav ul {
-    margin-top: 20px;
-    width: 100%;
-    justify-content: center;
-  }
-  header nav ul li a {
-    font-size: 20px;
-  }
-  footer h2,
-  footer div {
-    text-align: center;
-    width: 100%;
-  }
-  .hero-cta,
-  .hero-form {
-    width: 100%;
-  }
-  .hero-cta {
-    text-align: center;
-  }
-  .section-title {
-    width: 80%;
-  }
-  .trainer {
-    flex: 0 70%;
-  }
-  .contact-info iframe {
-    flex: 1 100%;
-  }
 }
 
 /* MEDIA QUERY FOR TABLETS AND SMALLER */
 @media screen and (max-width: 768px) {
   /* this will be applied on any screen between 768px and 575px */
-  section {
-    padding: 30px 15px;
-  }
-  .step h3 {
-    flex: 1 100%;
-    text-align: center;
-  }
-  .step-info {
-    flex: 2 100%;
-    text-align: center;
-    justify-content: center;
-  }
-  .step-img {
-    flex: 0 32%;
-    margin-right: 0;
-    margin-top: 15px;
-    margin-bottom: 15px;
-  }
-  .step-text {
-    flex: 100%;
-  }
-  .service-grid-container {
-    grid-template-columns: 1fr 1fr;
-  }
-  .service-grid-item.basic {
-    grid-column: 1 / span 1;
-  }
-  .service-grid-item.both {
-    grid-column: 1 / span 2;
-  }
-  .service-grid-item.cancel {
-    writing-mode: unset;
-    transform: none;
-    grid-row: -1;
-    grid-column: 1 / -1;
-  }
-  .trainer-img h3 .trainer-img h4 .trainer-img::after {
-    display: none;
-  }
-  .trainer-bio h3,
-  .trainer-bio h4 {
-    display: block;
-  }
 }
 
 /* MEDIA QUERY FOR MOBILE PHONES AND SMALLER */
 @media screen and (max-width: 575px) {
   /* this will be applied on any screen smaller than 575px */
-  .hero-form button {
-    width: 100%;
-  }
-  .section-title {
-    width: 95%;
-  }
-  .intro p {
-    width: 100%;
-  }
-  .trainer {
-    flex: 0 100%;
-  }
-  .contact-info {
-    text-align: center;
-  }
-  .contact-info > * {
-    flex: 0 100%;
-  }
-  .contact-form {
-    order: 3;
-  }
 }
