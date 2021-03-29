@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import "./Login.css";
+
 import pokeball from "../../assets/images/pokeball.png";
 
 function LoginForm(props) {
