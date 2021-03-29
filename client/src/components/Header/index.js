@@ -25,6 +25,9 @@ const Header = () => {
             <a>Logout</a>
           </li>
         </ul>
+        <div className='burger-container'>
+          <button className='burger'>nav</button>
+        </div>
       </nav>
     </header>
     

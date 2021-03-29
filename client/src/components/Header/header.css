@@ -63,6 +63,44 @@ nav ul {
     justify-content: space-around;
     align-items: center;
     list-style: none;
-    font-size: 1.6rem;
+    font-size: 1.6vw;
     font-family: 'RetroGaming';
+}
+nav button {
+    visibility: hidden;
+}
+.burger-container {
+    height: 100%;
+    display: flex;
+    justify-content: flex-end;
+}
+.burger {
+    background: linear-gradient(0deg, rgba(249,181,55,1) 17%, rgba(145,53,25,1) 25%, rgba(145,53,25,1) 46%, rgba(255,205,0,1) 53%, rgba(103,170,98,1) 72%, rgba(249,181,55,1) 83%);
+}
+
+@media screen and (max-width: 1024px) {
+    header {
+        grid-template-columns: 1fr 1fr;
+    }
+    .logo-container {
+        grid-column: 1;
+    }
+    nav ul {
+        font-size: 1.6rem;
+    }
+}
+  
+/* MEDIA QUERY FOR TABLETS AND SMALLER */
+@media screen and (max-width: 768px) {
+    nav ul {
+        display: none;
+    }
+    nav button {
+        visibility: visible;
+    }
+}
+  
+  /* MEDIA QUERY FOR MOBILE PHONES AND SMALLER */
+@media screen and (max-width: 575px) {
+    
 }
