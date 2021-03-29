@@ -133,3 +133,27 @@ button:focus {
     50% {bottom: 4px;}
     100% {bottom: 0px}
   }
+
+@media screen and (max-width: 1024px) {
+    .user-form {
+        width: 500px;
+    }
+}
+  
+  /* MEDIA QUERY FOR TABLETS AND SMALLER */
+  @media screen and (max-width: 768px) {
+    main {
+        flex-direction: column;
+    }
+  }
+  
+  /* MEDIA QUERY FOR MOBILE PHONES AND SMALLER */
+  @media screen and (max-width: 575px) {
+    .user-form {
+        width: 400px;
+        height: 700px;
+    }
+    .oak-container {
+        display: none;
+    }
+  }
