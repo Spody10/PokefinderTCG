@@ -1,4 +1,6 @@
 import React from "react";
+import profOak from "../assets/images/prof-oak.png";
+import arrow from "../assets/images/text-box-arrow.png";
 
 const Login = () => {
   return (
@@ -67,6 +69,19 @@ const Login = () => {
         </form>
         </div>
       </div>
+
+      {/* oak start */}
+      <div className="oak-container">
+        <div className="image-container">
+          <img src={profOak} alt='Professor Oak'></img>
+          <div className='spotlight'></div>
+        </div>
+        <div className='text-box dialogue'>
+          Welcome to the world of PokéfinderTCG!
+          <img src={arrow} alt="clickable arrow to proceed dialogue"></img>
+        </div>
+      </div>
+
     </main>
   );
 };
