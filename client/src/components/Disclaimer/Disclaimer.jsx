@@ -5,7 +5,7 @@ function Disclaimer() {
   return (
     <div className="textbox">
       <p className="disclaimer">
-        This site has no affliation with the Pokemon Company!
+        This site has no affliation with the Pokémon Company!
       </p>
     </div>
   );

@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import "./Login.css";
+import pokeball from "../../assets/images/pokeball.png";
 
 function LoginForm(props) {
   return (
@@ -19,8 +20,8 @@ function LoginForm(props) {
           </div>
         </div>
       </div>
-      <div className="footer">
-        <button type="button" className="btn">
+      <div className="button">
+        <button type="Image" className="btn" src="{pokeball}">
           Login
         </button>
       </div>
@@ -49,8 +50,8 @@ function LoginForm(props) {
           </div>
         </div>
       </div>
-      <div className="footer">
-        <button type="button" className="btn">
+      <div className="button">
+        <button type="image" className="btn">
           Submit
         </button>
       </div>
