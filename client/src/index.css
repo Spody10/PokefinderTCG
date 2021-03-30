@@ -28,7 +28,6 @@ main {
     justify-content: space-around;
     align-items: center;
     min-height: 89vh;
-    height: 89vh;
 }
 .text-box {
     background: #F2FCFF;

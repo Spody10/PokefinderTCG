@@ -2,7 +2,7 @@ import React from "react";
 
 import "./pokebox.css";
 
-const Header = () => {
+const Pokebox = () => {
     return (
       <section className="box-container">
 
@@ -19,4 +19,4 @@ const Header = () => {
     );
   };
   
-  export default Header;
+  export default Pokebox;
