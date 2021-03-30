@@ -6,7 +6,7 @@ import { motion } from "framer-motion"
 const Login = () => {
   return (
       <motion.main initial={{ opacity: 0 }}
-      transition={{ duration: 1 }}
+      transition={{ duration: .5 }}
         animate={{ opacity: 1 }}
         exit={{ opacity: 0 }}
         >
