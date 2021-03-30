@@ -3,13 +3,14 @@ const mongoose = require('mongoose');
 const { Schema } = mongoose;
 const bcrypt = require('bcrypt');
 
-const cardSchema = require('./Card');
+const Card = require('./Card');
 
 const userSchema = new Schema({
   username: {
     type: String,
     required: true,
     unique: true,
+    trim: true
   },
   email: {
     type: String,
@@ -21,7 +22,7 @@ const userSchema = new Schema({
     type: String,
     required: true,
   },
-  savedCards: [cardSchema],
+  postedCards: [Card.schema],
 },
 {
   toJSON: {
