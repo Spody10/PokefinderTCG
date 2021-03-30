@@ -76,7 +76,7 @@ button:focus {
 }
 /* reusables end */
 
-/* login start */
+/* login start ------------------------------------------------------ */
 /* forms */
 .user-form {
     width: 606px;
@@ -131,7 +131,19 @@ button:focus {
     animation-timing-function: ease-in-out;
     animation-iteration-count: infinite;
 }
-/* login end */
+/* login end ----------------------------------------------------------------*/
+
+
+.card-detail {
+    width: 30%;
+    height: 89vh;
+    background-color: yellow;
+    display: none;
+}
+
+
+
+
 
 /* arrow animation */
 @keyframes hover {
