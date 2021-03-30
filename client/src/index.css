@@ -28,6 +28,7 @@ main {
     justify-content: space-around;
     align-items: center;
     min-height: 89vh;
+    height: 89vh;
 }
 .text-box {
     background: #F2FCFF;
@@ -76,7 +77,7 @@ button:focus {
 }
 /* reusables end */
 
-/* login start */
+/* login start ------------------------------------------------------ */
 /* forms */
 .user-form {
     width: 606px;
@@ -131,7 +132,33 @@ button:focus {
     animation-timing-function: ease-in-out;
     animation-iteration-count: infinite;
 }
-/* login end */
+/* login end ----------------------------------------------------------------*/
+
+
+.card-detail {
+    width: 30%;
+    height: 100%;
+    background-color: yellow;
+    display: none;
+}
+
+.box-container {
+    width: 70%;
+    height: 100%;
+    background-color: violet;
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+}
+.pokebox {
+    background-color: blue;
+    width: 90%;
+    height: 80%;
+    margin-bottom: 2rem;
+}
+
+
+
 
 /* arrow animation */
 @keyframes hover {

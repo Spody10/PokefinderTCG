@@ -1,5 +1,8 @@
 import React from "react";
+import { Link } from "react-router-dom";
+
 import "./header.css";
+
 
 const Header = () => {
   return (
@@ -19,13 +22,17 @@ const Header = () => {
       <nav>
         <ul>
           <li>
-            <a>My page</a>
+            <Link to="/home">
+              My Page
+            </Link>
           </li>
           <li>
             <a>Collection</a>
           </li>
           <li>
-            <a>Logout</a>
+            <Link to="/">
+              Logout
+            </Link>
           </li>
         </ul>
         {/* burger should eventually open up collapsed navigation */}

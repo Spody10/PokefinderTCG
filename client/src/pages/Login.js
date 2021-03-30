@@ -1,10 +1,15 @@
 import React from "react";
 import profOak from "../assets/images/prof-oak.png";
 import arrow from "../assets/images/text-box-arrow.png";
+import { motion } from "framer-motion"
 
 const Login = () => {
   return (
-    <main>
+      <motion.main initial={{ opacity: 0 }}
+      transition={{ duration: 1 }}
+        animate={{ opacity: 1 }}
+        exit={{ opacity: 0 }}
+        >
       <div className='text-box user-form'>
         <div>
 
@@ -83,8 +88,7 @@ const Login = () => {
           <img src={arrow} alt="clickable arrow to proceed dialogue"></img>
         </div>
       </div>
-
-    </main>
+      </motion.main>
   );
 };
 
