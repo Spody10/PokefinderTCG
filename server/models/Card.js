@@ -38,5 +38,5 @@ const cardSchema = new Schema({
     }    
   });
   
-  module.exports = bookSchema;
+  module.exports = cardSchema;
   
