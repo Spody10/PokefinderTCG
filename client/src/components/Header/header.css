@@ -20,13 +20,29 @@ header h1 {
     padding: 1rem;
     border: 1px black solid;
     font-family: 'RetroGaming';
+    animation-name: logoGrow;
+    animation-duration: 2s;
+    animation-fill-mode: backwards;
+    animation-delay: 3s;
+    /* width: 0;
+    border: none;
+    padding: 0;
+    opacity: 0; */
 }header span {
     color: white;
+    animation-name: TCG;
+    animation-duration: 1s;
+    animation-fill-mode: backwards;
+    animation-delay: 5s;
 }
 .pokeball-container {
     display: flex;
     box-sizing: border-box;
     justify-content: center;
+    animation-name: rotate;
+    animation-duration: 2s;
+    animation-fill-mode: backwards;
+    animation-delay: 1s;
 }
 .pokeball-top {
     box-sizing: border-box;
@@ -76,6 +92,21 @@ nav button {
 }
 .burger {
     background: linear-gradient(0deg, rgba(249,181,55,1) 17%, rgba(145,53,25,1) 25%, rgba(145,53,25,1) 46%, rgba(255,205,0,1) 53%, rgba(103,170,98,1) 72%, rgba(249,181,55,1) 83%);
+}
+
+@keyframes rotate{
+    0% {transform: rotate(90deg)}
+    100% {transform: rotate(0deg)}    
+}
+@keyframes logoGrow {
+    0% {width:0; border: none; color: #ffffff00; padding: 0;}
+    5%{border: 1px black solid;}
+    80% {width: 73%; color: #ffffff00; }
+    100% {width:73%; border: 1px black solid; color: black; padding: 1rem;}
+}
+@keyframes TCG {
+    from {color: #ffffff00;}
+    to {color: white;}
 }
 
 @media screen and (max-width: 1024px) {
