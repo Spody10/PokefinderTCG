@@ -3,6 +3,8 @@ import { motion } from "framer-motion"
 
 import Pokebox from "../components/Pokebox"
 
+
+
 const Home = () => {
   return (
     <motion.main initial={{ opacity: 0 }}

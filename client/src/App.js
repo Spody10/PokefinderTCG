@@ -19,8 +19,8 @@ const client = new ApolloClient({
       }
     })
   }, */
-  uri: "/graphql",
-});
+  uri: 'http://localhost:3001/graphql',
+})
 
 function App() {
   return (
@@ -33,7 +33,7 @@ function App() {
               <AnimatePresence exitBeforeEnter>
                 <Switch location={location} key={location.pathname}>
                   <Route exact path="/" component={Login} />
-                  <Route exact path="/home" component={Home} />
+                  <Route exact path="/home/:id" component={Home} />
                   <Route exact path="/auction" component={Create} />
                 </Switch>
               </AnimatePresence>

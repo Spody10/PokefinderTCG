@@ -18,6 +18,9 @@ const resolvers = {
     cards: async (parent, { email }) => {
       const params = email ? { email } : {};
       return Card.find(params);
+    },
+    card: async (parent, { _id }) => {
+      return Card.findOne({ _id })
     }
   },
 

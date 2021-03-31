@@ -33,22 +33,25 @@ const Create = () => {
           <div>
             <h3 className="center-text">Rarity</h3>
           </div>
+
           <div className="rarity-container">
             <div className="inline">
-              <input name="holo" type="radio" value="holo" id="holo" />
-              <label for="holo">Holo</label>
-              <input name="Reverse" type="radio" />
-              <label for="reverse">Reverse</label>
+              <input name="shiny" type="radio" id="holo" />
+              <label htmlFor="holo">Holo</label>
+              <input name="shiny" type="radio" id="reverse" />
+              <label htmlFor="reverse">Reverse</label>
             </div>
+
             <div className="inline">
-              <input name="super-rare" type="radio" />
+              <input name="rarity" type="radio" id="super" />
               <label htmlFor="super-rare">Super-Rare</label>
-              <input name="secret-rare" type="radio" />
+              <input name="rarity" type="radio" id="secret" />
               <label htmlFor="secret-rare">Secret-Rare</label>
-              <input name="promo" type="radio" />
+              <input name="rarity" type="radio" id="promo" />
               <label htmlFor="promo">Promo</label>
             </div>
           </div>
+
           <br></br>
           <div>
             <label htmlFor="price"> Asking Price:</label>

@@ -6,4 +6,4 @@ db.once('open', async () => {
   // create user data
   const userData = [];
 
-  const cards = 
+})

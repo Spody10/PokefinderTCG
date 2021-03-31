@@ -12,6 +12,10 @@ const cardSchema = new Schema({
       type: String,
       required: true
     },
+    setName: {
+      type: String,
+      trim: true
+    },
     image: {
       type: String,
       required: true

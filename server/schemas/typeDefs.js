@@ -4,6 +4,7 @@ const typeDefs = gql`
   type Card {
     _id: ID
     name: String
+    setName: String
     email: String
     image: String
     grading: String
@@ -29,7 +30,7 @@ const typeDefs = gql`
   }
 
   type Query {
-    cards(category: ID, name: String): [Card]
+    cards(email: String): [Card]
     card(_id: ID!): Card
     user(username: String!): User
     users: [User]
@@ -37,7 +38,7 @@ const typeDefs = gql`
 
   type Mutation {
     addUser(username: String!, email: String!, password: String!): User
-    addCard(name: String!, email: String!, image: String!, grading: String, holo: Boolean, reverse: Boolean, superRare: Boolean, secretRare: Boolean, promo: Boolean, askingPrice: Float!, sold: Boolean): Card
+    addCard(name: String!, setName: String, email: String!, image: String!, grading: String, holo: Boolean, reverse: Boolean, superRare: Boolean, secretRare: Boolean, promo: Boolean, askingPrice: Float!, sold: Boolean): Card
     login(email: String!, password: String!): Auth
   }
 `;

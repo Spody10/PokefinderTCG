@@ -1,5 +1,6 @@
 const express = require('express');
 const { ApolloServer } = require('apollo-server-express');
+const bodyParser = require('body-parser');
 const path = require('path');
 
 const { typeDefs, resolvers } = require('./schemas');
@@ -18,7 +19,13 @@ const server = new ApolloServer({
 server.applyMiddleware({ app });
 
 app.use(express.urlencoded({ extended: false }));
+/* app.use(express.bodyParser({limit: '50mb'})); */
 app.use(express.json());
+/* app.use(express.json({limit: '50mb'}));
+app.use(express.urlencoded({limit: '50mb'})); */
+
+/* app.use(bodyParser.json({limit: '50mb'}));
+app.use(bodyParser.urlencoded({limit: '50mb', extended: true})); */
 
 app.use('/images', express.static(path.join(__dirname, '../client/images')));
 
