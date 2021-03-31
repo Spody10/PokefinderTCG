@@ -1,13 +1,14 @@
 import React from "react";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
-import { ApolloProvider } from '@apollo/react-hooks';
-import { AnimatePresence } from "framer-motion"
-import ApolloClient from 'apollo-boost';
+import { ApolloProvider } from "@apollo/react-hooks";
+import { AnimatePresence } from "framer-motion";
+import ApolloClient from "apollo-boost";
 
-import Login from './pages/Login'
-import Home from './pages/Home'
+import Login from "./pages/Login";
+import Home from "./pages/Home";
+import Create from "./pages/Create";
 
-import Header from './components/Header'
+import Header from "./components/Header";
 
 const client = new ApolloClient({
   /* request: (operation) => {
@@ -18,8 +19,8 @@ const client = new ApolloClient({
       }
     })
   }, */
-  uri: '/graphql',
-})
+  uri: "/graphql",
+});
 
 function App() {
   return (
@@ -33,6 +34,7 @@ function App() {
                 <Switch location={location} key={location.pathname}>
                   <Route exact path="/" component={Login} />
                   <Route exact path="/home" component={Home} />
+                  <Route exact path="/auction" component={Create} />
                 </Switch>
               </AnimatePresence>
             )}
