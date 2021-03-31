@@ -1,12 +1,22 @@
 import React from "react";
 import pokebox from "../assets/images/pokebox.png";
-import Header from "../components/Header/index";
 
-function Collection() {
-  return;
-  <div>
-    <img src={pokebox} style={{ width: "100%" }} alt="pokebox" />
-  </div>;
-}
+const Collection = () => {
+  return (
+    <main>
+      <div>
+        /* title plaque */
+        <div className="text-box title-plaque">
+          <h1 className="center-text page-title">Collection</h1>
+        </div>
+        /* pokebox */
+        <div className="pokebox-container">
+          /* cards start */
+          <div className="pokebox-row"></div>
+        </div>
+      </div>
+    </main>
+  );
+};
 
 export default Collection;
