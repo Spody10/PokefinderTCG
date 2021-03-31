@@ -5,7 +5,10 @@ export const QUERY_CARDS = gql`
     cards {
         _id
         name
-        email
+        askingPrice
+        image
+        holo
+        reverse
     }
   }
 `;

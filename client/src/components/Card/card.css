@@ -1,0 +1,32 @@
+.card-container {
+    box-shadow: inset 4px 4px 4px #0000007a, inset -4px -4px 4px rgb(0 0 0 / 72%);
+    border-radius: 52px;
+    padding: 1rem;
+    max-width: 100%;
+    max-height: 100%;
+  }
+  .card-top-container {
+    display: flex;
+    height: 65%;
+  }
+  .card-img-container {
+    width: 60%;
+    background-image: url(/static/media/test.47cb3f0a.jpeg);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 100%;
+      border-radius: 19px;
+  }
+  
+  .price {
+    margin: auto;
+      font-size: 2vw;
+  }
+  .card-name {
+    padding: .5rem;
+      font-size: 1.8vw;
+      height: 35%;
+  }
+  .card-name img {
+    width: 25px;
+  }
