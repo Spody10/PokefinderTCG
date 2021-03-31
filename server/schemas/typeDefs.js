@@ -30,7 +30,7 @@ const typeDefs = gql`
   }
 
   type Query {
-    cards(category: ID, name: String): [Card]
+    cards(email: String): [Card]
     card(_id: ID!): Card
     user(username: String!): User
     users: [User]
