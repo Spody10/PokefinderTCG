@@ -3,12 +3,6 @@ import React from "react";
 
 const Create = () => {
   return (
-    <motion.main
-      initial={{ opacity: 0 }}
-      transitiion={{ duration: 0.5 }}
-      animate={{ opacity: 1 }}
-      exit={{ opacity: 0 }}
-    >
       <div className="text-box">
         <h1 className="center-text">Auction a Card</h1>
         <form>
