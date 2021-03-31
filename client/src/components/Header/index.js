@@ -1,8 +1,14 @@
 import React from "react";
+import { Link } from "react-router-dom";
+
+import "./header.css";
+
 
 const Header = () => {
   return (
     <header>
+
+      {/* distance between the halves of the pokeball determined by h1 width */}
       <div className="logo-container">
         <div className="pokeball-container">
           <div className="pokeball-top">
@@ -12,18 +18,27 @@ const Header = () => {
           <div className="pokeball-bottom"></div>
         </div>
       </div>
+
       <nav>
         <ul>
           <li>
-            <a>My page</a>
+            <Link to="/home">
+              My Page
+            </Link>
           </li>
           <li>
             <a>Collection</a>
           </li>
           <li>
-            <a>Logout</a>
+            <Link to="/">
+              Logout
+            </Link>
           </li>
         </ul>
+        {/* burger should eventually open up collapsed navigation */}
+        <div className='burger-container'>
+          <button className='burger'>nav</button>
+        </div>
       </nav>
     </header>
     

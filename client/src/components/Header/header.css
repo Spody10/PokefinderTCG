@@ -1,0 +1,106 @@
+header {
+    background: linear-gradient(
+        0deg
+        , rgba(95,100,107,0) 0%,
+         rgba(95,100,107,0.25) 25%,
+          rgba(95,100,107,0.5) 50%,
+           rgba(95,100,107,0.75) 75%,
+            rgba(95,100,107,1) 100%);
+    min-height: 11vh;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+}
+.logo-container {
+    grid-column: 2/3;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+header h1 {
+    padding: 1rem;
+    border: 1px black solid;
+    font-family: 'RetroGaming';
+}header span {
+    color: white;
+}
+.pokeball-container {
+    display: flex;
+    box-sizing: border-box;
+    justify-content: center;
+}
+.pokeball-top {
+    box-sizing: border-box;
+    background-color: rgba(219,34,34,1);
+    width: 40px;
+    height: 80px;
+    border-top-left-radius: 40rem;
+    border-bottom-left-radius: 40rem;
+    border: 2px black solid;
+}
+.pokeball-button {
+    box-sizing: border-box;
+    background-color: white;
+    height: 35%;
+    width: 70%;
+    border-radius: 100%;
+    border: 3px solid black;
+    position: relative;
+    left: 70%;
+    top: 32%;
+}
+.pokeball-bottom {
+    box-sizing: border-box;
+    background-color: white;
+    width: 40px;
+    height: 80px;
+    border-top-right-radius: 40rem;
+    border-bottom-right-radius: 40rem;
+    border: 2px black solid;
+}
+nav ul {
+    height: 100%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    list-style: none;
+    font-size: 1.6vw;
+    font-family: 'RetroGaming';
+}
+nav button {
+    visibility: hidden;
+}
+.burger-container {
+    height: 100%;
+    display: flex;
+    justify-content: flex-end;
+}
+.burger {
+    background: linear-gradient(0deg, rgba(249,181,55,1) 17%, rgba(145,53,25,1) 25%, rgba(145,53,25,1) 46%, rgba(255,205,0,1) 53%, rgba(103,170,98,1) 72%, rgba(249,181,55,1) 83%);
+}
+
+@media screen and (max-width: 1024px) {
+    header {
+        grid-template-columns: 1fr 1fr;
+    }
+    .logo-container {
+        grid-column: 1;
+    }
+    nav ul {
+        font-size: 1.6rem;
+    }
+}
+  
+/* MEDIA QUERY FOR TABLETS AND SMALLER */
+@media screen and (max-width: 768px) {
+    nav ul {
+        display: none;
+    }
+    nav button {
+        visibility: visible;
+    }
+}
+  
+  /* MEDIA QUERY FOR MOBILE PHONES AND SMALLER */
+@media screen and (max-width: 575px) {
+    
+}

@@ -8,80 +8,170 @@
          url('./assets/font/retro_gaming/RetroGaming.woff2') format('woff2'), 
          url('./assets/font/retro_gaming/RetroGaming.ttf')  format('truetype') /* Safari, Android, iOS */
 }
+body {
+    background-color: #408880;
+}
 #root {
     height: 100vh;
     background-image: url(./assets/images/background.png);
     background-size: cover;
     background-position-y: center;
-}
-header {
-    background: linear-gradient(
-        0deg
-        , rgba(95,100,107,0) 0%,
-         rgba(95,100,107,0.25) 25%,
-          rgba(95,100,107,0.5) 50%,
-           rgba(95,100,107,0.75) 75%,
-            rgba(95,100,107,1) 100%);
-    height: 11vh;
-    /* display: flex;
-    justify-content: center;
-    align-items: center; */
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
-}
-.logo-container {
-    grid-column: 2/3;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-header h1 {
-    padding: 1rem;
-    border: 1px black solid;
     font-family: 'RetroGaming';
-}header span {
-    color: white;
 }
-.pokeball-container {
-    display: flex;
-    box-sizing: border-box;
-    justify-content: center;
+
+/* reusables start */
+.center-text {
+    text-align: center;
 }
-.pokeball-top {
-    box-sizing: border-box;
-    background-color: rgba(219,34,34,1);
-    width: 40px;
-    height: 80px;
-    border-top-left-radius: 40rem;
-    border-bottom-left-radius: 40rem;
-    border: 2px black solid;
-}
-.pokeball-button {
-    box-sizing: border-box;
-    background-color: white;
-    height: 35%;
-    width: 70%;
-    border-radius: 100%;
-    border: 3px solid black;
-    position: relative;
-    left: 70%;
-    top: 32%;
-}
-.pokeball-bottom {
-    box-sizing: border-box;
-    background-color: white;
-    width: 40px;
-    height: 80px;
-    border-top-right-radius: 40rem;
-    border-bottom-right-radius: 40rem;
-    border: 2px black solid;
-}
-nav ul {
-    height: 100%;
+main {
     display: flex;
     justify-content: space-around;
     align-items: center;
-    list-style: none;
-    font-size: 1.6rem;
-    font-family: 'RetroGaming';
+    min-height: 89vh;
 }
+.text-box {
+    background: #F2FCFF;
+    border: 5px solid #A3D2ED;
+    box-sizing: border-box;
+    border-radius: 42px;
+}
+input {
+    background-color: #cac4c4;
+    border: 0;
+    border-radius: 4px;
+    font-family: "RetroGaming";
+    font-size: 16px;
+    height: 37px;
+    margin-bottom: 1rem;
+    margin-top: 6px;
+    width: 100%;
+    min-width: 18em;
+    transition: all 250ms ease-in-out;
+}
+input:hover {
+    background-color: #ffffff;
+    box-shadow: 0px 0px 14px 0.3px #0e81ce96;
+}
+
+input:focus {
+    box-shadow: 0px 0px 12px 0.8px #3474dbb2;
+    outline: none;
+}
+
+button {
+    font-family: "RetroGaming";
+    font-size: 20px;
+    border-radius: 42px;
+    padding: 10px;
+}
+
+button:hover {
+    background-color: #ffffff;
+    box-shadow: 0px 0px 14px 0.3px #0e81ce96;
+}
+
+button:focus {
+    box-shadow: 0px 0px 12px 0.8px #3474dbb2;
+    outline: none;
+}
+/* reusables end */
+
+/* login start ------------------------------------------------------ */
+/* forms */
+.user-form {
+    width: 606px;
+    height: 822px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.break {
+    margin: 1rem 0;
+}
+
+/* prof oak styling */
+.oak-container {
+    height: 822px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    width: 27rem;
+}
+.image-container {
+    margin-bottom: 1rem;
+}
+.image-container img {
+    height: 35rem;
+    position: relative;
+    z-index: 1;
+    top: 4rem;
+    left: 3rem;
+}
+.spotlight {
+    background: #CEEFDE;
+    border: 11px solid #9CCEAD;
+    width: 100%;
+    height: 6rem;
+    border-radius: 50%;
+    box-sizing: border-box;
+    position: relative;
+    z-index: 0;
+}
+.dialogue {
+    height: 8rem;
+    padding: 1rem;
+    font-size: 1.8rem;
+}
+.dialogue img {
+    width: 25px;
+    margin-left: .5rem;
+    position: relative;
+    animation-name: hover;
+    animation-duration: 1s; 
+    animation-timing-function: ease-in-out;
+    animation-iteration-count: infinite;
+}
+/* login end ----------------------------------------------------------------*/
+
+
+.card-detail {
+    width: 30%;
+    height: 89vh;
+    background-color: yellow;
+    display: none;
+}
+
+
+
+
+
+/* arrow animation */
+@keyframes hover {
+    0% {bottom: 0px;}
+    50% {bottom: 4px;}
+    100% {bottom: 0px}
+}
+
+@media screen and (max-width: 1024px) {
+    .user-form {
+        width: 500px;
+    }
+}
+  
+  /* MEDIA QUERY FOR TABLETS AND SMALLER */
+  @media screen and (max-width: 768px) {
+    main {
+        flex-direction: column;
+    }
+  }
+  
+  /* MEDIA QUERY FOR MOBILE PHONES AND SMALLER */
+  @media screen and (max-width: 575px) {
+    .user-form {
+        width: 400px;
+        height: 700px;
+    }
+    .oak-container {
+        display: none;
+    }
+  }
