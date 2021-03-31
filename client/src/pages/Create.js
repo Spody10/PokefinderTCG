@@ -15,7 +15,6 @@ const Create = () => {
                 <img src={imageUpload} alt="imageUpload"></img>
               </div>
               <div className="upload">
-                <br></br>
                 <input name="upload" type="file" id="fileupload" />
               </div>
             </div>
@@ -24,25 +23,24 @@ const Create = () => {
         <form>
           <div>
             <label htmlFor="card-name">Card Name</label>
-            <br></br>
             <input name="card-name" type="text" id="card-name" />
           </div>
           <div>
             <label htmlFor="grading">Card Grading (min 1 max 10):</label>
-            <br></br>
             <input name="grading" type="number" min="1" max="10" id="grading" />
           </div>
+          <br></br>
           <div>
             <h3 className="center-text">Rarity</h3>
           </div>
           <div className="rarity-container">
-            <div>
+            <div className="inline">
               <input name="holo" type="radio" value="holo" id="holo" />
               <label for="holo">Holo</label>
               <input name="Reverse" type="radio" />
               <label for="reverse">Reverse</label>
             </div>
-            <div>
+            <div className="inline">
               <input name="super-rare" type="radio" />
               <label htmlFor="super-rare">Super-Rare</label>
               <input name="secret-rare" type="radio" />
@@ -51,9 +49,9 @@ const Create = () => {
               <label htmlFor="promo">Promo</label>
             </div>
           </div>
+          <br></br>
           <div>
             <label htmlFor="price"> Asking Price:</label>
-            <br></br>
             <input name="price" type="number" />
           </div>
           <div className="center-button">

@@ -200,11 +200,6 @@ button:focus {
   align-items: center;
   padding: 1rem;
 }
-.upload-card-container {
-  display: flex;
-  justify-content: center;
-  align-content: center;
-}
 
 .upload-image-card {
   background: #cac4c4;
@@ -240,6 +235,19 @@ button:focus {
   display: flex;
   justify-content: center;
   align-content: center;
+}
+.rarity-container label {
+  float: left;
+  clear: none;
+  display: block;
+  padding: 0px 1em 0px 8px;
+}
+
+.rarity-container input[type="radio"],
+input.radio {
+  float: left;
+  clear: none;
+  margin: 2px 0 0 2px;
 }
 .center-button {
   display: flex;
