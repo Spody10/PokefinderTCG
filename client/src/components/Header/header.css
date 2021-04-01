@@ -82,6 +82,13 @@ nav ul {
     font-size: 1.6vw;
     font-family: 'RetroGaming';
 }
+nav a {
+    color: white;
+    text-decoration: none;
+}
+nav a:hover {
+    text-decoration: underline;
+}
 nav button {
     visibility: hidden;
 }

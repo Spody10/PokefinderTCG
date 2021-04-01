@@ -11,3 +11,27 @@ export const ADD_CARD = gql`
   }
 `;
 
+export const LOGIN_USER = gql`
+  mutation login($loginEmail: String!, $loginPassword: String!) {
+    login(email: $loginEmail, password: $loginPassword) {
+      token
+      user {
+        _id
+        username
+      }
+    }
+  }
+`;
+
+export const ADD_USER = gql`
+  mutation addUser($signupUsername: String!, $signupEmail: String!, $signupPassword: String!) {
+    addUser(username: $signupUsername, email: $signupEmail, password: $signupPassword) {
+      token
+      user {
+        _id
+        username
+      }
+    }
+  }
+`;
+
