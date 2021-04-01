@@ -1,7 +1,10 @@
 const { AuthenticationError } = require('apollo-server-express');
 const { User, Card } = require('../models');
 const { getMaxListeners } = require('../models/Card');
+const { Cloudinary } = '../lib';
 /* const { signToken } = require('../utils/auth'); */
+/* require('dotenv').config();
+const cloudinary = require('cloudinary'); */
 
 const resolvers = {
   Query: {
@@ -17,7 +20,7 @@ const resolvers = {
     },
     cards: async (parent, { email }) => {
       const params = email ? { email } : {};
-      return Card.find(params);
+      return Card.find(params).sort({ createdAt: -1 });
     },
     card: async (parent, { _id }) => {
       return Card.findOne({ _id })
@@ -31,9 +34,20 @@ const resolvers = {
       return { user };
     },
     addCard: async (parent, args, context) => {
+      /* const Cloudinary = {upload: async (image) => {
+        const res = await cloudinary.v2.uploader.upload(image, {
+            api_key: process.env.CLOUDINARY_KEY,
+            api_secret: process.env.CLOUDINARY_SECRET,
+            cloud_name: process.env.CLOUDINARY_NAME,
+            folder: "card-images/"
+        })
+        return res.secure_url
+    }} */
       /* if (context.user) { */
-        const card = await Card.create({ ...args, email: /* context.user.email */ "akira941@getMaxListeners.com"});
-
+        /* const targetImage = await Cloudinary.upload(args.image)
+        console.log(targetImage) */
+        const card = await Card.create({ ...args, /* image: targetImage, */ email: /* context.user.email */ "akira941@getMaxListeners.com"});
+        
         await User.findByIdAndUpdate(
           { _id: /* context.user._id */ "6062eb1890744a2a7c0925a0"},
           { $push: { postedCards: card._id } },

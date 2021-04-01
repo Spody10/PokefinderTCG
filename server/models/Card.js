@@ -8,6 +8,10 @@ const cardSchema = new Schema({
       required: true,
       trim: true
     },
+    createdAt: {
+      type: Date,
+      default: Date.now
+    },
     email: {
       type: String,
       required: true
@@ -18,7 +22,7 @@ const cardSchema = new Schema({
     },
     image: {
       type: String,
-      required: true
+      /* required: true */
     },
     /* not sure what link is supposed to be */
     /* link: {

@@ -7,7 +7,7 @@ import { ADD_CARD } from '../utils/mutations';
 import imageUpload from "../assets/images/imageUpload.png";
 
 const Create = () => {
-  const [formState, setFormState] = useState({ name: '', image: '', grading: '', holo: '', reverse: '', superRare: '', secretRare: '', promo: '', askingPrice: '', });
+  const [formState, setFormState] = useState({ name: '', image: '', grading: '', holo: false, reverse: false, superRare: false, secretRare: false, promo: false, askingPrice: '', });
   const [addCard, { error }] = useMutation(ADD_CARD);
   
   const handleChange = event => {
@@ -18,7 +18,7 @@ const Create = () => {
       const file = event.target.files[0]
       reader.addEventListener("load", function () {
         // convert image file to base64 string
-        /* console.log(reader.result); */
+        //console.log(reader.result);
         setFormState({
           ...formState,
           image: reader.result
@@ -44,6 +44,22 @@ const Create = () => {
 
   const handleFormSubmit = async event => {
     event.preventDefault();
+    /* console.log(formState.image) */
+    /* const data = new FormData();
+        data.append('file', formState.image);
+        data.append('upload_preset', 'card-images');
+        const res = await fetch (
+            '	http://api.cloudinary.com/v1_1/dwpyfpiyf/card-images/upload/',
+            {
+                method: 'POST',
+                body: data
+            }
+        )
+        const file = await res.json();
+        setFormState({
+          ...formState,
+          image: file
+        }) */
     console.log(formState)
     try {
       const { data } = await addCard({
