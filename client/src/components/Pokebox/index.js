@@ -44,7 +44,11 @@ const Pokebox = ({onOpen}) => {
 
         <div className='box-label-container'>
           <div onClick={clickArrow} id='left-triangle'></div>
-          <div className='box-label'></div>
+          <div className='box-label'>
+            <div>
+              Box {document.location.pathname.split("/")[2]}
+            </div>
+          </div>
           <div onClick={clickArrow} id='right-triangle'></div>
         </div>
 

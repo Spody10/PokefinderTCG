@@ -46,6 +46,10 @@
     width: 40%;
     margin: 0 1rem;
     border-radius: 15px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 2rem;
 }
 #right-triangle {
     width: 0;
