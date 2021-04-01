@@ -1,6 +1,5 @@
 const express = require('express');
 const { ApolloServer } = require('apollo-server-express');
-const bodyParser = require('body-parser');
 const path = require('path');
 const cors = require('cors');
 const compression = require('compression');
@@ -13,8 +12,8 @@ const app = express();
 
 const server = new ApolloServer({
   typeDefs,
-  resolvers/* ,
-  context: authMiddleware */
+  resolvers,
+  context: authMiddleware
 });
 
 server.applyMiddleware({ app });
