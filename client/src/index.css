@@ -80,6 +80,7 @@ button:focus {
 
 
 
+
 /* login start ------------------------------------------------------ */
 /* forms */
 .user-form {
@@ -137,12 +138,6 @@ button:focus {
 }
 /* login end ----------------------------------------------------------------*/
 
-.card-detail {
-  width: 30%;
-  height: 89vh;
-  background-color: yellow;
-  display: none;
-}
 
 /* arrow animation */
 @keyframes hover {

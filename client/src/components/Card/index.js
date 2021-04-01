@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 
 import './card.css'
 import cardimg from "../../assets/images/test.jpeg"
@@ -12,6 +12,7 @@ function CardItem(card) {
     askingPrice,
     holo,
     reverse,
+    onOpen
   } = card;
 
   return (
@@ -21,7 +22,7 @@ function CardItem(card) {
               </div>
               <div className='price'>${askingPrice}</div>
             </div>
-            <div className='text-box card-name'>
+            <div className='text-box card-name' onClick={onOpen} id={_id}>
               {name}
               <img src={arrow} alt="clickable arrow"></img>
             </div>
