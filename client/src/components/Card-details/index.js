@@ -1,5 +1,7 @@
+
 import React from "react";
 import { motion } from "framer-motion"
+
 
 import './card-details.css'
 import cardimg from "../../assets/images/test.jpeg"

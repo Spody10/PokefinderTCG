@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 
 import Pokebox from "../components/Pokebox"
-import CardDetails from "../components/Card-Details"
+import CardDetails from "../components/Card-details"
 
 
 
