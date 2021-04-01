@@ -4,22 +4,14 @@ import './card-details.css'
 import cardimg from "../../assets/images/test.jpeg"
 
 
-function CardItem(card) {
-  const {
-    image,
-    name,
-    _id,
-    askingPrice,
-    holo,
-    reverse,
-  } = card;
+function CardItem({ onClose }) {
 
   return (
     <section className="card-detail">
         <div className='halves-container'>
           <div className='card-detail-top'>
             <div className='card-detail-btn'>
-              <button>X</button>
+              <button onClick={onClose}>X</button>
             </div>
             <div className='card-display'>
                 <img src={cardimg}></img>

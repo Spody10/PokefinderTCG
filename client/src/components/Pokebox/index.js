@@ -8,7 +8,7 @@ import "./pokebox.css";
 import cardimg from "../../assets/images/test.jpeg"
 import arrow from "../../assets/images/text-box-arrow.png";
 
-const Pokebox = () => {
+const Pokebox = ({onOpen}) => {
   const [arrowClick, setArrowClick] = useState('')
 
   const { loading, data, fetchMore } = useQuery(QUERY_CARDS, {
@@ -17,7 +17,6 @@ const Pokebox = () => {
       offset: 0
     }, */
   });
-  console.log(data)
 
   function filterCards() {
     let queryNum = document.location.pathname.split("/")[2]
@@ -55,6 +54,7 @@ const Pokebox = () => {
         {loading ? <h2>loading</h2>: 
         filterCards().map(card => (
                 <Card
+                  onOpen={onOpen}
                   key= {card._id}
                   _id={card._id}
                   image={card.image}
