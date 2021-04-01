@@ -55,6 +55,7 @@ const typeDefs = gql`
   type Mutation {
     addUser(username: String!, email: String!, password: String!): User
     addCard(name: String!,setName: String,image: String,email: String,grading: String,holo: Boolean,reverse: Boolean,superRare: Boolean,secretRare: Boolean ,promo: Boolean, askingPrice: String!, sold: Boolean): Card
+    deleteCard(_id: ID!): User
     login(email: String!, password: String!): Auth
   }
 `;
