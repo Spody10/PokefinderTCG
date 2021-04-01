@@ -2,6 +2,8 @@ import React from "react";
 import { motion } from "framer-motion"
 
 import Pokebox from "../components/Pokebox"
+import CardDetails from "../components/Card-Details"
+
 
 
 
@@ -11,9 +13,8 @@ const Home = () => {
     transition={{ duration: .5 }}
         animate={{ opacity: 1 }}
         exit={{ opacity: 0 }}>
-      <section className="card-detail">
-
-      </section>
+      
+      <CardDetails />
       
       {/* key is necessary for exit animations */}
       <Pokebox key='pokebox'/>
