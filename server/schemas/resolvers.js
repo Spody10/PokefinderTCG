@@ -32,7 +32,7 @@ const resolvers = {
       const user = await User.create(args);
       const token = signToken(user);
 
-      return { user };
+      return { token, user };
     },
     addCard: async (parent, args, context) => {
       /* const Cloudinary = {upload: async (image) => {

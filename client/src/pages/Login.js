@@ -1,9 +1,39 @@
-import React from "react";
+import React, { useState } from 'react';
+import { useMutation } from '@apollo/react-hooks';
+import { ADD_USER } from '../utils/mutations';
 import profOak from "../assets/images/prof-oak.png";
 import arrow from "../assets/images/text-box-arrow.png";
 import { motion } from "framer-motion"
 
+import Auth from '../utils/auth';
+
 const Login = () => {
+  const [signupFormState, setSignupFormState] = useState({ signupUsername: '', signupEmail: '', signupPassword: '' });
+  const [addUser, { error }] = useMutation(ADD_USER);
+
+  const handleSignupChange = event => {
+    const { name, value } = event.target;
+
+    setSignupFormState({
+      ...signupFormState,
+      [name]: value
+    });
+  };
+
+  const handleSignupFormSubmit = async event => {
+    event.preventDefault();
+
+    try {
+      const { data } = await addUser({
+        variables: { ...signupFormState }
+      });
+
+      Auth.login(data.addUser.token);
+    } catch (e) {
+      console.error(e);
+    }
+  };
+
   return (
       <motion.main initial={{ opacity: 0 }}
       transition={{ duration: .5 }}
@@ -20,7 +50,7 @@ const Login = () => {
               <br></br>
               <input
                 name="login-email"
-                type="login-email"
+                type="email"
                 id="login-email"
               />
             </div>
@@ -29,7 +59,7 @@ const Login = () => {
               <br></br>
               <input
                 name="login-password"
-                type="login-password"
+                type="password"
                 id="login-password"
               />
             </div>
@@ -41,31 +71,31 @@ const Login = () => {
           <div className="break">------------------ OR ------------------</div>
 
           <h1 className='center-text'>Signup</h1>
-          <form>
+          <form onSubmit={handleSignupFormSubmit}>
             <div>
               <label htmlFor="signup-username">Username:</label>
               <br></br>
-              <input
-                name="signup-username"
-                type="signup-username"
+              <input onChange={handleSignupChange}
+                name="signupUsername"
+                type="username"
                 id="signup-username"
               />
             </div>
             <div>
               <label htmlFor="signup-email">Email:</label>
               <br></br>
-              <input
-                name="signup-email"
-                type="signup-email"
+              <input onChange={handleSignupChange}
+                name="signupEmail"
+                type="email"
                 id="signup-email"
               />
             </div>
             <div>
               <label htmlFor="signup-password">Password:</label>
               <br></br>
-              <input
-                name="signup-password"
-                type="signup-password"
+              <input onChange={handleSignupChange}
+                name="signupPassword"
+                type="password"
                 id="signup-password"
               />
             </div>
