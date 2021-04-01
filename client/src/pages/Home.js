@@ -8,14 +8,16 @@ import CardDetails from "../components/Card-Details"
 
 
 const Home = () => {
-  const [isPanelOpen, setIsPanelOpen] = useState(true);
+  const [isPanelOpen, setIsPanelOpen] = useState(false);
   const [targetedCard, setTargetedCard] = useState('');
+   
 
   const openPanel = (event) => {
     setTargetedCard(event.target.id)
     if(!isPanelOpen) {
       setIsPanelOpen(true)
     }
+    /* console.log(data) */
   }
 
   const closePanel = () => {
@@ -30,7 +32,7 @@ const Home = () => {
         exit={{ opacity: 0 }}>
       
       {isPanelOpen && (
-        <CardDetails onClose={closePanel} />
+        <CardDetails onClose={closePanel} cardInfo={targetedCard}/>
       )}
       
       {/* key is necessary for exit animations */}

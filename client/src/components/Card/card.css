@@ -29,4 +29,12 @@
   }
   .card-name img {
     width: 25px;
+    margin-left: 0.5rem;
+  position: relative;
+  }
+  .card-container:hover >.card-name>img {
+    animation-name: hover;
+  animation-duration: 1s;
+  animation-timing-function: ease-in-out;
+  animation-iteration-count: infinite;
   }

@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { useQuery } from '@apollo/react-hooks';
 import { Redirect } from "react-router-dom";
 
@@ -17,6 +17,7 @@ const Pokebox = ({onOpen}) => {
       offset: 0
     }, */
   });
+  localStorage.setItem("cards", JSON.stringify(data))
 
   function filterCards() {
     let queryNum = document.location.pathname.split("/")[2]
