@@ -1,13 +1,69 @@
-import React from "react";
+import React, { useState } from 'react';
 import { motion } from "framer-motion";
+import { useMutation } from '@apollo/react-hooks';
+import { ADD_CARD } from '../utils/mutations';
+
+
 import imageUpload from "../assets/images/imageUpload.png";
 
 const Create = () => {
+  const [formState, setFormState] = useState({ name: '', image: '', grading: '', holo: '', reverse: '', superRare: '', secretRare: '', promo: '', askingPrice: '', });
+  const [addCard, { error }] = useMutation(ADD_CARD);
+  
+  const handleChange = event => {
+    const { id, value } = event.target;
+    let input = value
+    if (id === 'fileupload') {
+      const reader = new FileReader();
+      const file = event.target.files[0]
+      reader.addEventListener("load", function () {
+        // convert image file to base64 string
+        /* console.log(reader.result); */
+        setFormState({
+          ...formState,
+          image: reader.result
+        });
+      }, false);
+      
+      if (file) {
+        reader.readAsDataURL(file);
+      }
+    } else {
+      if (input === "on") {
+        input = true
+      }
+      console.log(input)
+      setFormState({
+        ...formState,
+        [id]: input
+      });
+    }
+
+    
+  };
+
+  const handleFormSubmit = async event => {
+    event.preventDefault();
+    console.log(formState)
+    try {
+      const { data } = await addCard({
+        variables: { ...formState }
+      });
+
+      /* Auth.login(data.login.token); */
+    } catch (e) {
+      console.error(e);
+    }
+
+    // clear form values
+    setFormState({ name: '', email: '', image: '', grading: '', holo: '', reverse: '', superRare: '', secretRare: '', promo: '', askingPrice: '', sold: '' });
+  };
+
   return (
     <div className="auction-form-container">
       <div className="text-box auction-form">
         <h1 className="center-text">Auction a Card</h1>
-        <form>
+        <form onSubmit={handleFormSubmit}>
           <div className="upload-card-container">
             <h2>Upload Image</h2>
             <div className="upload-image-card">
@@ -15,19 +71,18 @@ const Create = () => {
                 <img src={imageUpload} alt="imageUpload"></img>
               </div>
               <div className="upload">
-                <input name="upload" type="file" id="fileupload" />
+                <input onChange={handleChange} name="upload" type="file" id="fileupload" />
               </div>
             </div>
           </div>
-        </form>
-        <form>
+        
           <div>
-            <label htmlFor="card-name">Card Name</label>
-            <input name="card-name" type="text" id="card-name" />
+            <label htmlFor="name">Card Name</label>
+            <input onChange={handleChange} name="name" type="text" id="name" />
           </div>
           <div>
             <label htmlFor="grading">Card Grading (min 1 max 10):</label>
-            <input name="grading" type="number" min="1" max="10" id="grading" />
+            <input onChange={handleChange} name="grading" type="number" min="1" max="10" id="grading" />
           </div>
           <br></br>
           <div>
@@ -36,18 +91,18 @@ const Create = () => {
 
           <div className="rarity-container">
             <div className="inline">
-              <input name="shiny" type="radio" id="holo" />
+              <input onChange={handleChange} name="shiny" type="radio" id="holo" />
               <label htmlFor="holo">Holo</label>
-              <input name="shiny" type="radio" id="reverse" />
+              <input onChange={handleChange} name="shiny" type="radio" id="reverse" />
               <label htmlFor="reverse">Reverse</label>
             </div>
 
             <div className="inline">
-              <input name="rarity" type="radio" id="super" />
+              <input onChange={handleChange} name="rarity" type="radio" id="superRare" />
               <label htmlFor="super-rare">Super-Rare</label>
-              <input name="rarity" type="radio" id="secret" />
+              <input onChange={handleChange} name="rarity" type="radio" id="secretRare" />
               <label htmlFor="secret-rare">Secret-Rare</label>
-              <input name="rarity" type="radio" id="promo" />
+              <input onChange={handleChange} name="rarity" type="radio" id="promo" />
               <label htmlFor="promo">Promo</label>
             </div>
           </div>
@@ -55,7 +110,7 @@ const Create = () => {
           <br></br>
           <div>
             <label htmlFor="price"> Asking Price:</label>
-            <input name="price" type="number" />
+            <input onChange={handleChange} name="price" type="number" id="askingPrice"/>
           </div>
           <div className="center-button">
             <button className="image-submit">Submit</button>
