@@ -1,4 +1,5 @@
 const { gql } = require('apollo-server-express');
+const { signToken } = require('../utils/auth')
 
 const typeDefs = gql`
   type Card {
@@ -26,7 +27,7 @@ const typeDefs = gql`
   }
 
   type Auth {
-    token: ID
+    token: ID!
     user: User
   }
 
@@ -53,10 +54,11 @@ const typeDefs = gql`
   }
 
   type Mutation {
-    addUser(username: String!, email: String!, password: String!): User
+    login(email: String!, password: String!): Auth
+    addUser(username: String!, email: String!, password: String!): Auth
     addCard(name: String!,setName: String,image: String,email: String,grading: String,holo: Boolean,reverse: Boolean,superRare: Boolean,secretRare: Boolean ,promo: Boolean, askingPrice: String!, sold: Boolean): Card
     deleteCard(_id: ID!): User
-    login(email: String!, password: String!): Auth
+    
   }
 `;
 

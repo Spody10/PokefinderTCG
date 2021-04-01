@@ -2,7 +2,7 @@ const { AuthenticationError } = require('apollo-server-express');
 const { User, Card } = require('../models');
 const { getMaxListeners } = require('../models/Card');
 const { Cloudinary } = '../lib';
-/* const { signToken } = require('../utils/auth'); */
+const { signToken } = require('../utils/auth'); 
 /* require('dotenv').config();
 const cloudinary = require('cloudinary'); */
 
@@ -30,9 +30,25 @@ const resolvers = {
   Mutation: {
     addUser: async (parent, args) => {
       const user = await User.create(args);
+      const token = signToken(user);
 
-      return { user };
+      return { token, user };
     },
+    login: async (parent,  { email, password }) => {
+      const user = await User.findOne({ email });
+
+      if (!user) {
+        throw new AuthenticationError('Incorrect credentials');
+      }
+      const correctPW = await user.isCorrectPassword(password);
+
+      if (!correctPW) {
+        throw new AuthenticationError('Incorrect credentials');
+      }
+      const token = signToken(user);
+      return { token, user};
+    },
+
     addCard: async (parent, args, context) => {
       /* const Cloudinary = {upload: async (image) => {
         const res = await cloudinary.v2.uploader.upload(image, {

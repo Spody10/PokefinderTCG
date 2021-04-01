@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { motion } from "framer-motion"
 
 import Pokebox from "../components/Pokebox"
-import CardDetails from "../components/Card-Details"
+import CardDetails from "../components/Card-details"
 
 
 
