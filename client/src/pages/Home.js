@@ -1,5 +1,4 @@
 import React, { useState } from 'react';
-import { motion } from "framer-motion"
 
 import Pokebox from "../components/Pokebox"
 import CardDetails from "../components/Card-Details"
@@ -26,19 +25,16 @@ const Home = () => {
   }
 
   return (
-    <motion.main initial={{ opacity: 0 }}
-    transition={{ duration: .5 }}
-        animate={{ opacity: 1 }}
-        exit={{ opacity: 0 }}>
+    <main>
       
       {isPanelOpen && (
-        <CardDetails onClose={closePanel} cardInfo={targetedCard}/>
+        <CardDetails onClose={closePanel} cardInfo={targetedCard} key='single-card'/>
       )}
       
       {/* key is necessary for exit animations */}
       <Pokebox onOpen={openPanel} key='pokebox'/>
       
-    </motion.main>
+    </main>
   );
 };
 

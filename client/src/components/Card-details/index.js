@@ -1,4 +1,5 @@
 import React from "react";
+import { motion } from "framer-motion"
 
 import './card-details.css'
 import cardimg from "../../assets/images/test.jpeg"
@@ -13,7 +14,12 @@ function CardItem({ onClose, cardInfo }) {
   
 
   return (
-    <section className="card-detail">
+    <motion.section className="card-detail"
+    initial={{ x: -500 }}
+    transition={{ duration: .5 }}
+    animate={{ x: 0 }}
+    exit={{ x: -500 }}
+    >
         <div className='halves-container'>
           <div className='card-detail-top'>
             <div className='card-detail-btn'>
@@ -37,7 +43,7 @@ function CardItem({ onClose, cardInfo }) {
           </div>
         </div>
           
-    </section>
+    </motion.section>
   );
 }
 

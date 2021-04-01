@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { useQuery } from '@apollo/react-hooks';
 import { Redirect } from "react-router-dom";
+import { motion } from "framer-motion"
 
 import { QUERY_CARDS } from "../../utils/queries";
 import Card from "../Card"
@@ -21,7 +22,6 @@ const Pokebox = ({onOpen}) => {
 
   function filterCards() {
     let queryNum = document.location.pathname.split("/")[2]
-    console.log(queryNum)
     return data.cards.slice((queryNum - 1) * 6, queryNum * 6);
   }
 
@@ -37,10 +37,33 @@ const Pokebox = ({onOpen}) => {
     }
   }
 
-  
+  /* const variants = {
+    enter: () => {
+      return {
+        x: direction === 'left' ? -2000 : 2000,
+      };
+    },
+    center: {
+      x: 0,
+    },
+    exit: () => {
+      return {
+        x: direction === 'left' ? 2000 : -2000,
+      };
+    }
+  }; */
 
     return (
-      <section className="box-container">
+      <motion.section className="box-container"
+        initial={{ x: 2000 }}
+        animate={{ x: 0 }}
+        exit={{ x: -2000 }}
+        transition={{ duration: .5 }}
+        /* variants={variants}
+          initial="enter"
+          animate="center"
+          exit="exit" */
+      >
 
         <div className='box-label-container'>
           <div onClick={clickArrow} id='left-triangle'></div>
@@ -71,7 +94,7 @@ const Pokebox = ({onOpen}) => {
             ))}
             {  null}
         </div>
-      </section>
+      </motion.section>
     );
   };
   
