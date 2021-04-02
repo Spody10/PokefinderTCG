@@ -36,11 +36,18 @@ This project is licensed under the MIT license.
 
 https://github.com/BeatyPete
 ​
+​
+
 https://github.com/veta583518
+​
+
 ​
 https://github.com/jenovotny7
 ​
+​
 https://github.com/jessm91
+
+​
 ​
 https://github.com/Spody10
 
