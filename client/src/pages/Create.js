@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { motion } from "framer-motion";
 import { useMutation } from '@apollo/react-hooks';
 import { ADD_CARD } from '../utils/mutations';
+import Auth from '../utils/auth';
 
 
 import imageUpload from "../assets/images/imageUpload.png";
@@ -45,11 +46,15 @@ const Create = () => {
   const handleFormSubmit = async event => {
     event.preventDefault();
     /* console.log(formState.image) */
-    /* const data = new FormData();
+    const token = Auth.loggedIn() ? Auth.getToken() : null;
+    if (!token) {
+      return false;
+        }
+    const data = new FormData();
         data.append('file', formState.image);
-        data.append('upload_preset', 'card-images');
+        data.append('upload_preset', 'poketcg');
         const res = await fetch (
-            '	http://api.cloudinary.com/v1_1/dwpyfpiyf/card-images/upload/',
+            '		https://api.cloudinary.com/v1_1/dwpyfpiyf/image/upload',
             {
                 method: 'POST',
                 body: data
@@ -58,15 +63,15 @@ const Create = () => {
         const file = await res.json();
         setFormState({
           ...formState,
-          image: file
-        }) */
+          image: file.secureUrl
+        })
     console.log(formState)
     try {
       const { data } = await addCard({
         variables: { ...formState }
       });
 
-      /* Auth.login(data.login.token); */
+      // Auth.login(data.login.token);
     } catch (e) {
       console.error(e);
     }
