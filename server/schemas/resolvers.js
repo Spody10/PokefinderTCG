@@ -35,30 +35,21 @@ const resolvers = {
       return { token, user };
     },
     addCard: async (parent, args, context) => {
-      /* const Cloudinary = {upload: async (image) => {
-        const res = await cloudinary.v2.uploader.upload(image, {
-            api_key: process.env.CLOUDINARY_KEY,
-            api_secret: process.env.CLOUDINARY_SECRET,
-            cloud_name: process.env.CLOUDINARY_NAME,
-            folder: "card-images/"
-        })
-        return res.secure_url
-    }} */
-      /* if (context.user) { */
+      if (context.user) {
         /* const targetImage = await Cloudinary.upload(args.image)
         console.log(targetImage) */
-        const card = await Card.create({ ...args, /* image: targetImage, */ email: /* context.user.email */ "akira941@getMaxListeners.com"});
+        const card = await Card.create({ ...args, /* image: targetImage, */ email: context.user.email});
         
         await User.findByIdAndUpdate(
-          { _id: /* context.user._id */ "6062eb1890744a2a7c0925a0"},
+          { _id: context.user._id},
           { $push: { postedCards: card._id } },
           { new: true }
         );
 
         return card;
-     /*  }
+     }
 
-      throw new AuthenticationError('You need to be logged in!'); */
+      throw new AuthenticationError('You need to be logged in!');
     },
     deleteCard: async (parent, {_id}, context) => {
       /* if (context.user) { */
