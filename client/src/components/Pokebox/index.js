@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import { useQuery } from '@apollo/react-hooks';
 import { Redirect } from "react-router-dom";
 import { motion } from "framer-motion"
@@ -6,13 +6,12 @@ import { motion } from "framer-motion"
 import { QUERY_CARDS } from "../../utils/queries";
 import Card from "../Card"
 import "./pokebox.css";
-import cardimg from "../../assets/images/test.jpeg"
-import arrow from "../../assets/images/text-box-arrow.png";
+
 
 const Pokebox = ({onOpen}) => {
   const [arrowClick, setArrowClick] = useState('')
 
-  const { loading, data, fetchMore } = useQuery(QUERY_CARDS, {
+  const { loading, data } = useQuery(QUERY_CARDS, {
     /* variables: {
       limit: 4,
       offset: 0
