@@ -1,7 +1,6 @@
-import React, { useState } from "react";
+import React from "react";
 
 import './card.css'
-import cardimg from "../../assets/images/test.jpeg"
 import arrow from "../../assets/images/text-box-arrow.png";
 
 function CardItem(card) {
@@ -10,8 +9,6 @@ function CardItem(card) {
     name,
     _id,
     askingPrice,
-    holo,
-    reverse,
     onOpen
   } = card;
 
