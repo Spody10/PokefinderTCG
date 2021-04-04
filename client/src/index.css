@@ -29,6 +29,7 @@ main {
   justify-content: space-around;
   align-items: center;
   min-height: 89vh;
+  overflow: hidden;
 }
 .text-box {
   background: #f2fcff;

@@ -1,6 +1,5 @@
 const express = require('express');
 const { ApolloServer } = require('apollo-server-express');
-const bodyParser = require('body-parser');
 const path = require('path');
 const cors = require('cors');
 const compression = require('compression');
@@ -14,21 +13,20 @@ const app = express();
 const server = new ApolloServer({
   typeDefs,
   resolvers,
-  context: authMiddleware 
+
+  context: authMiddleware
+
 });
 
-server.applyMiddleware({ app });
-
 app.use(express.urlencoded({ extended: false }));
-/* app.use(express.bodyParser({limit: '50mb'})); */
 app.use(express.json({ limit: '2mb'}));
 app.use(cors());
 app.use(compression());
-/* app.use(express.json({limit: '50mb'}));
-app.use(express.urlencoded({limit: '50mb'})); */
 
-/* app.use(bodyParser.json({limit: '50mb'}));
-app.use(bodyParser.urlencoded({limit: '50mb', extended: true})); */
+server.applyMiddleware({ app, path: '/graphql', bodyParserConfig: {limit: '10mb'} });
+
+
+
 
 app.use('/images', express.static(path.join(__dirname, '../client/images')));
 

@@ -2,8 +2,14 @@ import React from "react";
 import { Link } from "react-router-dom";
 
 import "./header.css";
+import Auth from '../../utils/auth';
 
 const Header = () => {
+  const logout = event => {
+    event.preventDefault();
+    Auth.logout();
+  };
+  
   return (
     <header>
       {/* distance between the halves of the pokeball determined by h1 width */}
@@ -19,6 +25,7 @@ const Header = () => {
         </div>
       </div>
 
+      {Auth.loggedIn() ? (
       <nav>
         <ul>
           <li>
@@ -28,14 +35,14 @@ const Header = () => {
             <Link to="/auction">Auction</Link>
           </li>
           <li>
-            <Link to="/">Logout</Link>
+            <a href="/" onClick={logout}>Logout</a>
           </li>
         </ul>
         {/* burger should eventually open up collapsed navigation */}
         <div className="burger-container">
           <button className="burger">nav</button>
         </div>
-      </nav>
+      </nav> ) : null }
     </header>
   );
 };
