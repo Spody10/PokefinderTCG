@@ -16,12 +16,11 @@
     "url": "git+https://github.com/Spody10/PokefinderTCG.git"
   },
   "author": "",
-  "license": "ISC",
+  "license": "MIT",
   "bugs": {
     "url": "https://github.com/Spody10/PokefinderTCG/issues"
   },
-  "homepage": "https://github.com/Spody10/PokefinderTCG#readme",
   "dependencies": {
-    "concurrently": "^6.0.0"
+    "if-env": "^1.0.4"
   }
 }
