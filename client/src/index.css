@@ -14,10 +14,25 @@ body {
 }
 #root {
   height: 100vh;
-  background-image: url(./assets/images/background.png);
   background-size: cover;
   background-position-y: center;
   font-family: "RetroGaming";
+  background: linear-gradient(0deg, rgba(64,136,128,1) 0%,
+                                    rgba(64,136,128,1) 25%,
+                                      rgba(80,144,136,1) 25%,
+                                      rgba(80,144,136,1) 27%,
+                                        rgba(104,160,152,1) 27%,
+                                        rgba(104,160,152,1) 29%,
+                                          rgba(128,176,168,1) 29%,
+                                          rgba(128,176,168,1) 31%,
+                                            rgba(152,192,184,1) 31%,
+                                            rgba(152,192,184,1) 33%,
+                                              rgba(176,208,200,1) 33%,
+                                              rgba(176,208,200,1) 35%,
+                                                rgba(200,224,216,1) 35%,
+                                                rgba(200,224,216,1) 37%,
+                                                  rgba(224,240,232,1) 37%,
+                                                  rgba(224,240,232,1) 100%);
 }
 
 /* reusables start */
