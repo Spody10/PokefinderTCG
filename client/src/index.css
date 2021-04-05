@@ -78,10 +78,6 @@ button:focus {
 }
 /* reusables end */
 
-
-
-
-
 /* login start ------------------------------------------------------ */
 /* forms */
 .user-form {
@@ -139,7 +135,6 @@ button:focus {
 }
 /* login end ----------------------------------------------------------------*/
 
-
 /* arrow animation */
 @keyframes hover {
   0% {
@@ -165,7 +160,7 @@ button:focus {
     flex-direction: column;
   }
   .auction-form {
-    width: 700px;
+    width: 500px;
   }
 }
 
@@ -182,7 +177,7 @@ button:focus {
     width: 400px;
     height: 700px;
   }
-  .upload-image-card {
+  .upload-image img {
     display: none;
   }
 }
