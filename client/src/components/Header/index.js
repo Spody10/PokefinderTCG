@@ -14,15 +14,26 @@ const Header = () => {
     <header>
       {/* distance between the halves of the pokeball determined by h1 width */}
       <div className="logo-container">
+        {/* login check to decide whether to play animation so login/signup redirect doesnt have it replay */}
+        {Auth.loggedIn() ? (
         <div className="pokeball-container">
-          <div className="pokeball-top">
-            <div className="pokeball-button"></div>
-          </div>
-          <h1>
-            Pokéfinder<span>TCG</span>
-          </h1>
-          <div className="pokeball-bottom"></div>
+        <div className="pokeball-top">
+          <div className="pokeball-button"></div>
         </div>
+        <h1>
+          Pokéfinder<span>TCG</span>
+        </h1>
+        <div className="pokeball-bottom"></div>
+      </div>): <div className="pokeball-container rotate-animate">
+        <div className="pokeball-top">
+          <div className="pokeball-button"></div>
+        </div>
+        <h1 className='grow-animate'>
+          Pokéfinder<span className='TCG-animate'>TCG</span>
+        </h1>
+        <div className="pokeball-bottom"></div>
+      </div>}
+        
       </div>
 
       {Auth.loggedIn() ? (
