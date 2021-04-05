@@ -20,16 +20,19 @@ header h1 {
     padding: 1rem;
     border: 1px black solid;
     font-family: 'RetroGaming';
+    
+
+}
+.grow-animate {
     animation-name: logoGrow;
     animation-duration: 2s;
     animation-fill-mode: backwards;
     animation-delay: 2s;
-    /* width: 0;
-    border: none;
-    padding: 0;
-    opacity: 0; */
-}header span {
+}
+header span {
     color: white;
+}
+.TCG-animate {
     animation-name: TCG;
     animation-duration: 1s;
     animation-fill-mode: backwards;
@@ -39,6 +42,8 @@ header h1 {
     display: flex;
     box-sizing: border-box;
     justify-content: center;
+}
+.rotate-animate {
     animation-name: rotate;
     animation-duration: 1s;
     animation-fill-mode: backwards;
@@ -140,5 +145,14 @@ nav button {
   
   /* MEDIA QUERY FOR MOBILE PHONES AND SMALLER */
 @media screen and (max-width: 575px) {
-    
+    .pokeball-top {
+        display: none;
+    }
+    .pokeball-bottom {
+        display: none;
+    }
+    .pokeball-container h1 {
+        font-size: 1.3rem;
+        border: none;
+    }
 }

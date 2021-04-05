@@ -3,6 +3,8 @@
     height: 89vh;
     display: flex;
     align-items: center;
+    z-index: 1;
+    min-width: 20rem;
   }
   .halves-container {
     height: 90%;
@@ -49,7 +51,25 @@
     background-color: #9494AD;
     padding: 1rem;
     color: white;
-    font-size: 1.4rem;
+    font-size: 2.4vh;
     line-height: 3rem;
     text-shadow: 3px 3px black;
   }
+
+@media screen and (max-width: 1024px) {
+  .card-detail {
+    position: fixed;
+    left: 0;
+    bottom: 0;
+  }
+}
+
+/* MEDIA QUERY FOR TABLETS AND SMALLER */
+@media screen and (max-width: 768px) {
+
+}
+
+/* MEDIA QUERY FOR MOBILE PHONES AND SMALLER */
+@media screen and (max-width: 575px) {
+
+}

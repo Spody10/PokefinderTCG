@@ -20,7 +20,7 @@
   
   .price {
     margin: auto;
-      font-size: 2vw;
+      font-size: 1.5rem;
   }
   .card-name {
     padding: .8rem;
@@ -28,7 +28,7 @@
       height: 35%;
   }
   .card-name img {
-    width: 25px;
+    width: 1.3vw;
     margin-left: 0.5rem;
   position: relative;
   }
@@ -38,3 +38,24 @@
   animation-timing-function: ease-in-out;
   animation-iteration-count: infinite;
   }
+
+@media screen and (max-width: 1024px) {
+  .card-name {
+    font-size: 1.3rem;
+  }
+  .card-name img {
+    width: 1.3rem;
+  }
+}
+  
+/* MEDIA QUERY FOR TABLETS AND SMALLER */
+@media screen and (max-width: 768px) {
+  .card-container {
+    min-height: 20rem;
+  }
+}
+
+/* MEDIA QUERY FOR MOBILE PHONES AND SMALLER */
+@media screen and (max-width: 575px) {
+
+}
