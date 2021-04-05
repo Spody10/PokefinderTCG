@@ -50,6 +50,7 @@
     justify-content: center;
     align-items: center;
     font-size: 2rem;
+    min-height: 4rem;
 }
 #right-triangle {
     width: 0;
@@ -57,4 +58,42 @@
     border-top: 30px solid transparent;
     border-left: 35px solid red;
     border-bottom: 30px solid transparent;
+}
+
+@media screen and (max-width: 1024px) {
+    .box-container{
+        width: 100%;
+    }
+    .pokebox {
+        width: 100%;
+    }
+}
+  
+/* MEDIA QUERY FOR TABLETS AND SMALLER */
+@media screen and (max-width: 768px) {
+    .box-container {
+        height: auto;
+    }
+    .pokebox {
+        height: auto;
+        grid-template-columns: 1fr 1fr;
+    }
+    .box-label {
+        margin: 1rem;
+    }
+    #right-triangle{
+        border-top: 20px solid transparent;
+        border-left: 25px solid red;
+        border-bottom: 20px solid transparent;
+    }
+    #left-triangle {
+        border-top: 20px solid transparent;
+        border-right: 25px solid red;
+        border-bottom: 20px solid transparent;
+    }
+}
+
+/* MEDIA QUERY FOR MOBILE PHONES AND SMALLER */
+@media screen and (max-width: 575px) {
+
 }
