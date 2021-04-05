@@ -95,5 +95,7 @@
 
 /* MEDIA QUERY FOR MOBILE PHONES AND SMALLER */
 @media screen and (max-width: 575px) {
-
+    .pokebox {
+        grid-template-columns: 1fr;
+    }
 }

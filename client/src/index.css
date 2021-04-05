@@ -187,8 +187,9 @@ button:focus {
 /* MEDIA QUERY FOR MOBILE PHONES AND SMALLER */
 @media screen and (max-width: 575px) {
   .user-form {
-    width: 400px;
     height: 700px;
+    width: 100%;
+    padding: .3rem;
   }
   .oak-container {
     display: none;

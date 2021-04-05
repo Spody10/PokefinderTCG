@@ -140,5 +140,14 @@ nav button {
   
   /* MEDIA QUERY FOR MOBILE PHONES AND SMALLER */
 @media screen and (max-width: 575px) {
-    
+    .pokeball-top {
+        display: none;
+    }
+    .pokeball-bottom {
+        display: none;
+    }
+    .pokeball-container h1 {
+        font-size: 1.3rem;
+        border: none;
+    }
 }
