@@ -34,7 +34,7 @@ run npm start to launch the local site
 
 ## Usage
 
-![Pokefinder-Screenshot](assets/images/Pokefinder-Screenshot.png)
+![Pokefinder-Screenshot](https://github.com/Spody10/PokefinderTCG/blob/Veronica2/client/src/assets/images/Pokefinder-Screenshot.PNG)
 
 ## License
 
