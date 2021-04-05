@@ -21,7 +21,6 @@
     "url": "https://github.com/Spody10/PokefinderTCG/issues"
   },
   "dependencies": {
-    "concurrently": "^6.0.0",
     "if-env": "^1.0.4"
   }
 }
