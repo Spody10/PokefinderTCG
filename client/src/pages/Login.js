@@ -69,7 +69,8 @@ const Login = () => {
         animate={{ opacity: 1 }}
         exit={{ opacity: 0 }}
         >
-      <div className='text-box user-form'>
+      {!Auth.loggedIn() ? (
+        <div className='text-box user-form'>
         <div>
 
           <h1 className='center-text'>Login</h1>
@@ -134,7 +135,8 @@ const Login = () => {
           </form>
 
         </div>
-      </div>
+      </div>): null}
+      
 
       {/* oak start */}
       <div className="oak-container">
