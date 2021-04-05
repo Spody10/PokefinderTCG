@@ -40,10 +40,9 @@ To post your own card, you must go to the auction page, where you will be prompt
 This site uses the game Pokemon: FireRed as the inspiration for its design.
 [Link to mockup created in figma](https://www.figma.com/file/iwJdlGJFOy189tNAQ6p3GL/pokefinderTCG?node-id=0%3A1)
 
-<img src='./mockup-images/prof-ref.PNG' width='300px'> 
-<img src="./mockup-images/login-page.PNG" width='300px'>
-<img src='./mockup-images/box-ref.PNG' width='300px'> 
-<img src="./mockup-images/home-page.PNG" width='300px'>
+<img src='./mockup-images/prof-ref.PNG' width='300px'></img> <img src="./mockup-images/login-page.PNG" width='300px'></img>
+
+<img src='./mockup-images/box-ref.PNG' width='300px'></img> <img src="./mockup-images/home-page.PNG" width='300px'></img>
 
 ## Contributors
 - Christian Bissinger: https://github.com/BeatyPete
