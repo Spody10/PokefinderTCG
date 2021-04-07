@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { motion } from "framer-motion";
+import { Redirect } from 'react-router-dom';
 import { useMutation } from '@apollo/react-hooks';
 import { ADD_CARD } from '../utils/mutations';
 import Auth from '../utils/auth';
@@ -8,7 +9,8 @@ import Auth from '../utils/auth';
 import imageUpload from "../assets/images/imageUpload.png";
 
 const Create = () => {
-  const [formState, setFormState] = useState({ name: '', image: '', grading: '', holo: false, reverse: false, superRare: false, secretRare: false, promo: false, askingPrice: '', });
+  const [formState, setFormState] = useState({ name: '', image: '', grading: '', holo: false, reverse: false, superRare: false, secretRare: false, promo: false, askingPrice: '' });
+  const [submit, setSubmit] = useState(false);
   const [addCard, { error }] = useMutation(ADD_CARD);
   
   const handleChange = event => {
@@ -77,7 +79,8 @@ const Create = () => {
     }
 
     // clear form values
-    setFormState({ name: '', email: '', image: '', grading: '', holo: '', reverse: '', superRare: '', secretRare: '', promo: '', askingPrice: '', sold: '' });
+    setFormState({ name: '', image: '', grading: '', holo: false, reverse: false, superRare: false, secretRare: false, promo: false, askingPrice: '' });
+    setSubmit(true)
   };
 
   return (
@@ -99,11 +102,11 @@ const Create = () => {
         
           <div>
             <label htmlFor="name">Card Name</label>
-            <input onChange={handleChange} name="name" type="text" id="name" />
+            <input onChange={handleChange} value={formState.name} name="name" type="text" id="name" />
           </div>
           <div>
             <label htmlFor="grading">Card Grading (min 1 max 10):</label>
-            <input onChange={handleChange} name="grading" type="number" min="1" max="10" id="grading" />
+            <input onChange={handleChange} value={formState.grading} name="grading" type="number" min="1" max="10" id="grading" />
           </div>
           <br></br>
           <div>
@@ -112,9 +115,9 @@ const Create = () => {
 
           <div className="rarity-container">
             <div className="inline">
-              <input onChange={handleChange} name="shiny" type="radio" id="holo" />
+              <input onChange={handleChange} value={formState.holo} name="shiny" type="radio" id="holo" />
               <label htmlFor="holo">Holo</label>
-              <input onChange={handleChange} name="shiny" type="radio" id="reverse" />
+              <input onChange={handleChange} value={formState.reverse} name="shiny" type="radio" id="reverse" />
               <label htmlFor="reverse">Reverse</label>
             </div>
 
@@ -138,6 +141,7 @@ const Create = () => {
           </div>
         </form>
       </div>
+      {submit && <Redirect push to="/home/1" />}
     </div>
   );
 };
