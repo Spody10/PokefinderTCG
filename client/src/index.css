@@ -2,6 +2,26 @@
   padding: 0px;
   margin: 0px;
 }
+/* width */
+*::-webkit-scrollbar {
+  width: 5px;
+}
+
+/* Track */
+*::-webkit-scrollbar-track {
+  background: #f1f1f100; 
+}
+ 
+/* Handle */
+*::-webkit-scrollbar-thumb {
+  background: #888; 
+  border-radius: 50px;
+}
+
+/* Handle on hover */
+*::-webkit-scrollbar-thumb:hover {
+  background: #555; 
+}
 @font-face {
   font-family: "RetroGaming";
   src: url("./assets/font/retro_gaming/RetroGaming.woff") format("woff"),

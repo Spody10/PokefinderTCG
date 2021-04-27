@@ -10,6 +10,8 @@
     height: 90%;
     width: 100%;
     max-width: 30rem;
+    box-shadow: black 0px 0px 10px;
+    border-radius: 20px;
   }
   .card-detail-top {
     background-color: #73737B;
@@ -54,7 +56,7 @@
     font-size: 1.5em;
     line-height: 250%;
     text-shadow: 3px 3px black;
-    overflow: scroll;
+    overflow: auto;
   }
 
 @media screen and (max-width: 1024px) {
