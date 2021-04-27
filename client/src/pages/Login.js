@@ -64,7 +64,8 @@ const Login = () => {
   };
 
   return (
-      <motion.main initial={{ opacity: 0 }}
+      <motion.main className="login-main"
+      initial={{ opacity: 0 }}
       transition={{ duration: .5 }}
         animate={{ opacity: 1 }}
         exit={{ opacity: 0 }}

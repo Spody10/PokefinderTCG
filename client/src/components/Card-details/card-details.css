@@ -1,10 +1,10 @@
 .card-detail {
-    width: 30%;
-    height: 89vh;
-    display: flex;
-    align-items: center;
-    z-index: 1;
-    min-width: 20rem;
+  width: 30%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  z-index: 1;
+  min-width: 20rem;
   }
   .halves-container {
     height: 90%;
@@ -51,9 +51,10 @@
     background-color: #9494AD;
     padding: 1rem;
     color: white;
-    font-size: 2.4vh;
-    line-height: 3rem;
+    font-size: 1.5em;
+    line-height: 250%;
     text-shadow: 3px 3px black;
+    overflow: scroll;
   }
 
 @media screen and (max-width: 1024px) {

@@ -41,10 +41,17 @@ body {
 }
 main {
   display: flex;
-  justify-content: space-around;
-  align-items: center;
-  min-height: 89vh;
-  overflow: hidden;
+    /* justify-content: space-around; */
+    align-items: center;
+    height: 89vh;
+    min-height: 50rem;
+    max-height: 80rem;
+    /* overflow: hidden; */
+}
+.login-main {
+  max-width: 90rem;
+    margin: auto;
+    justify-content: space-around;
 }
 .text-box {
   background: #f2fcff;
